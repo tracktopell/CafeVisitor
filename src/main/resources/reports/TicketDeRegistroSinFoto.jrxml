@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="TicketDeRegistro" language="groovy" pageWidth="163" pageHeight="225" columnWidth="163" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="11a92365-c4f5-4806-b1a1-ad327ebfdc78">
+	<property name="ireport.zoom" value="2.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<property name="ireport.callouts" value="##Sat Jul 21 10:43:27 CDT 2012"/>
+	<parameter name="nombreNegocio" class="java.lang.String"/>
+	<parameter name="direccionNegocio" class="java.lang.String"/>
+	<parameter name="telefonosNegocio" class="java.lang.String"/>
+	<parameter name="nombre" class="java.lang.String"/>
+	<parameter name="destino" class="java.lang.String"/>
+	<parameter name="oficina" class="java.lang.String"/>
+	<parameter name="entrada" class="java.lang.String"/>
+	<parameter name="folio" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select * from orders where orderid < 10255]]>
+	</queryString>
+	<title>
+		<band height="32" splitType="Stretch">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="0" y="0" width="163" height="14" uuid="0520cc06-b769-4a56-a09c-26bfe0084802"/>
+				<textElement textAlignment="Center">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nombreNegocio}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="0" y="13" width="163" height="10" uuid="0520cc06-b769-4a56-a09c-26bfe0084802"/>
+				<textElement textAlignment="Center">
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{direccionNegocio}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="0" y="22" width="163" height="10" uuid="e4cb4cf5-b5e5-413b-ba33-3a245b5fe06f"/>
+				<textElement textAlignment="Center">
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{telefonosNegocio}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="186" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="104" width="72" height="10" uuid="6ed43173-89c5-4942-b022-deaf25bafde0"/>
+				<textElement textAlignment="Right" verticalAlignment="Top">
+					<font size="6"/>
+				</textElement>
+				<text><![CDATA[PISO / OFICINA :]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="93" width="163" height="12" uuid="0520cc06-b769-4a56-a09c-26bfe0084802"/>
+				<textElement textAlignment="Center">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{destino}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="3" y="5" width="157" height="74" uuid="0520cc06-b769-4a56-a09c-26bfe0084802"/>
+				<textElement textAlignment="Center">
+					<font size="18" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nombre}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="124" width="72" height="10" uuid="6ed43173-89c5-4942-b022-deaf25bafde0"/>
+				<textElement textAlignment="Right" verticalAlignment="Top">
+					<font size="6"/>
+				</textElement>
+				<text><![CDATA[ENTRADA :]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="113" width="163" height="12" uuid="0520cc06-b769-4a56-a09c-26bfe0084802"/>
+				<textElement textAlignment="Center">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{oficina}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="84" width="72" height="10" uuid="fe11d7b6-9e0d-4c84-b844-07b0c350d69d"/>
+				<textElement textAlignment="Right" verticalAlignment="Top">
+					<font size="6"/>
+				</textElement>
+				<text><![CDATA[VISITA A :]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="133" width="163" height="12" uuid="e0c7a84d-efd6-44a1-ba04-d9e4ce286a8a"/>
+				<textElement textAlignment="Center">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{entrada}]]></textFieldExpression>
+			</textField>
+			<componentElement>
+				<reportElement x="0" y="165" width="163" height="21" uuid="fa5f8d7d-6d6f-478b-bbe3-384dddf85969"/>
+				<jr:barbecue xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" type="Code128" drawText="false" checksumRequired="false">
+					<jr:codeExpression><![CDATA[$P{folio}]]></jr:codeExpression>
+				</jr:barbecue>
+			</componentElement>
+			<staticText>
+				<reportElement x="0" y="144" width="72" height="10" uuid="d281bdbc-1314-4741-9504-0bb27aedad6b"/>
+				<textElement textAlignment="Right" verticalAlignment="Top">
+					<font size="6"/>
+				</textElement>
+				<text><![CDATA[FOLIO :]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="153" width="163" height="12" uuid="63c8533d-00c8-4716-a6d3-5e57ecf86686"/>
+				<textElement textAlignment="Center">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{folio}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+</jasperReport>
